@@ -90,7 +90,6 @@ def train_test():
     return inp_train, op_train, inp_test,  op_test
 
 
-
 n_timesteps = 9
 n_classes = len(unique())
 
