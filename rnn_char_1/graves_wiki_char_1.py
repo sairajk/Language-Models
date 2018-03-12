@@ -3,7 +3,6 @@ import tensorflow as tf
 from sklearn.utils import shuffle
 from sklearn.model_selection import train_test_split
 
-
 data_file = 'data/graves_wiki_data.txt'
 x_file = 'data/graves_wiki_x.txt'
 y_file = 'data/graves_wiki_y.txt'
@@ -46,7 +45,6 @@ def word2vec(_string, alphabet= unique()):
     return vector
 
 def corpus2vec(inp_con, op_con):
-
     i = 0
     for word in inp_con:
         #print(word)
@@ -60,7 +58,6 @@ def corpus2vec(inp_con, op_con):
         else:
             vec_ip = np.append(vec_ip, temp, axis= 0 )
         i = i+1
-    # np.save('C:/Users/SAI RAJ/Desktop/research/image captioning/isi/input_vec.npy', vec)
 
     i = 0
     for word in op_con:
@@ -75,8 +72,6 @@ def corpus2vec(inp_con, op_con):
         else:
             vec_op = np.append(vec_op, temp, axis=0)
         i = i + 1
-    #np.save('C:/Users/SAI RAJ/Desktop/research/image captioning/isi/output_vec.npy', vec)
-
     return vec_ip, vec_op
 
 
@@ -212,8 +207,7 @@ class Wiki:
                 print("Test Epoch %d loss %0.4f acc %0.3f \n" % (e, total_loss, total_acc))
                 self.saver.save(sess, "models/rnn_char_1.ckpt")
 
-
-
+                
 if __name__ == "__main__":
     # make_seq()
 
@@ -223,11 +217,3 @@ if __name__ == "__main__":
     if (mode == 'New'):
         obj.create_model()
     obj.train(mode, epochs = 500, batch_size = 8)
-
-
-
-
-
-
-
-
